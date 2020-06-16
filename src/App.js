@@ -1,25 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import Layout from './layouts/Layout/Layout';
+import { Route } from 'react-router';
+import { Switch } from 'react-router-dom';
+import Login from './components/containers/Login/Login';
+import Reserved from './components/containers/Reseved/Reseved';
+import Home from './components/containers/Home/Home';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Layout >
+      <div style={{ minHeight: "100vh" }}>
+        سایر کامپوننت ها
+
+
+<Switch>
+          <Route path="/home" exact component={Home} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/" exact component={Home} />
+          <Route path="/reserved" exact component={Reserved} />
+        </Switch>
+
+      </div>
+
+    </Layout>
+
   );
 }
 

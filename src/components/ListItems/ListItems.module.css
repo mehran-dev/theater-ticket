@@ -1,0 +1,6 @@
+.Menu {
+
+    display       : flex;
+    flex-direction: row-reverse;
+    margin        : 12px 20px;
+}
