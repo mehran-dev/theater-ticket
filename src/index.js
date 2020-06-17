@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import thunk from "redux-thunk";
-
+import authenticationReducer from './store/reducers/Auth';
 
 //const store = createStore(reducer)
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -15,7 +15,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 
 const rootReducer = combineReducers({
-  // auth: authenticationReducer,
+  Auth: authenticationReducer,
   //notes: notesReducer
 });
 

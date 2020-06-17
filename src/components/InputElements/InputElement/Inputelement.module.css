@@ -1,0 +1,20 @@
+.InputPair {
+    background-color: inherit;
+    display         : flex;
+    background-color: inherit;
+    width           : 90%;
+    justify-content : space-between;
+    margin          : 10px auto;
+    flex-direction  : row-reverse;
+}
+
+.InputPair label {
+    background-color: inherit;
+}
+
+.InputPair input {
+    background-color: inherit;
+    outline         : none;
+    border          : none;
+    border          : 1px solid rgb(119, 94, 94);
+}

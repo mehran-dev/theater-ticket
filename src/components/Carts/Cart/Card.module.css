@@ -1,0 +1,27 @@
+.Cart {
+    background-color: teal;
+    margin          : 20px 12px;
+    width           : 80%;
+    min-height      : 150px;
+
+    padding: 3px 12px;
+    border : 2px solid rgb(20, 163, 51);
+}
+
+.Cart button {
+    width           : 60px;
+    height          : 23px;
+    background-color: tomato;
+    display         : block;
+    cursor          : pointer;
+}
+
+.Cart span {
+    font-weight: bold;
+}
+
+.Badge {
+    background-color: brown;
+    padding         : 3px;
+    border-radius   : 300px;
+}

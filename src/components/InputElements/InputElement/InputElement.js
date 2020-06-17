@@ -1,9 +1,10 @@
 import React from 'react';
-
-const InputElement = () => {
+import css from './InputElement.module.css';
+const InputElement = (props) => {
     return (
-        <div>
-
+        <div className={css.InputPair}>
+            <label>{props.lbl}</label>
+            <input type={props.eltype} />
         </div>
     );
 };

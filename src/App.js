@@ -6,6 +6,15 @@ import { Switch } from 'react-router-dom';
 import Login from './components/containers/Login/Login';
 import Reserved from './components/containers/Reseved/Reseved';
 import Home from './components/containers/Home/Home';
+import Dashboard from './components/containers/Dashboard/Dashboard';
+
+
+
+
+
+
+
+
 function App() {
   return (
 
@@ -14,10 +23,11 @@ function App() {
         سایر کامپوننت ها
 
 
-<Switch>
+        <Switch>
           <Route path="/home" exact component={Home} />
           <Route path="/login" exact component={Login} />
           <Route path="/" exact component={Home} />
+          <Route path="/dashboard" component={Dashboard} />
           <Route path="/reserved" exact component={Reserved} />
         </Switch>
 

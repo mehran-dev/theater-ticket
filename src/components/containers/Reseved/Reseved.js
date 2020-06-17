@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Reseved extends Component {
+class Reserved extends Component {
     render() {
         return (
             <div>
@@ -9,3 +9,7 @@ export default class Reseved extends Component {
         )
     }
 }
+
+
+
+export default Reserved;
