@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import Carts from '../../Carts/Carts';
-import DatePicker from '../../DatePicker/DatePicker';
 import { DateTimeInput } from 'react-hichestan-datetimepicker';
 import { connect } from 'react-redux';
 import css from './Home.module.css';
+import { getTicketsFromDB } from '../../../store/actions/reserve-ticket';
+
+
+
+
+
+
 
 
 
@@ -23,14 +29,30 @@ class Home extends Component {
 
 
     }
+    componentDidMount() {
+        this.props.onGetTickets()
+        //console.log(this.props.tickets);
+
+    }
+
+    componentWillUnmount() {
+        //  console.log(this.props.tickets);
+
+    }
+
+
+   
 
 
     render() {
+
+
+
         return (
             <div>
                 Home Page
+            
 
-                <DatePicker />
                 <div className={css.DatePicker}>
                     <DateTimeInput
                         value={this.state.myDateTime}
@@ -49,7 +71,20 @@ class Home extends Component {
 const mapStateToProps = state => {
 
     return {
-        isAuth: state.Auth.isAuth
+        isAuth: state.Auth.isAuth,
+        tickets: state.tickets.tickets
     }
 }
-export default connect(mapStateToProps)(Home);
+
+
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onGetTickets: () => {
+            dispatch(getTicketsFromDB())
+        },
+
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

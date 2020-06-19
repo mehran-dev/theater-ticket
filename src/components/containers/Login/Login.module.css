@@ -1,13 +1,14 @@
 .Frm {
-    width           : 300px;
-    background-color: rgb(255, 217, 0);
-    min-height      : 60vh;
-    display         : flex;
+    width     : 300px;
+    background: linear-gradient(to top, rgb(179, 192, 0), rgb(80, 16, 153));
+    min-height: 60vh;
+    display   : flex;
 
-    margin    : 3px auto;
-    margin-top: 32px;
-    position  : relative;
-
+    margin       : 3px auto;
+    margin-top   : 32px;
+    position     : relative;
+    border-radius: 12px;
+    box-shadow   : 6px 6px 5px rgb(70, 70, 15);
 }
 
 .Frm form {
@@ -20,9 +21,9 @@
     margin          : 0 auto;
     font            : inherit;
     background-color: transparent;
-    border          : 1px solid yellow;
+    border          : 1px solid rgb(65, 5, 114);
 
-    color        : indianred;
+    color        : rgb(65, 5, 105);
     position     : absolute;
     left         : 6%;
     bottom       : 6%;
@@ -33,7 +34,7 @@
 
 
 .Frm button:hover {
-    background-color: lightcoral;
+    background-color: rgb(48, 0, 94);
     box-shadow      : 0 0 6px red;
     color           : lightcyan;
     border-color    : transparent;
@@ -48,17 +49,17 @@
     position        : absolute;
     right           : 6%;
     bottom          : 6%;
-    color           : rgb(4, 117, 117);
+    color           : rgb(104, 69, 17);
     border-bottom   : 3px solid transparent;
-    border-top      : 3px solid transparent;
-    padding         : 3px;
-    border-radius   : 5px;
+
+    padding      : 3px;
+    border-radius: 5px;
 }
 
 
 .Switcher:hover {
     cursor      : pointer;
-    border-color: teal;
-    box-shadow  : 0 0 12px teal;
-
+    border-color: rgba(77, 4, 95, 0.432);
+    box-shadow  : 0px 0px 2px rgb(91, 4, 109);
+    color       : rgb(68, 29, 87)
 }

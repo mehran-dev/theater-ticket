@@ -24,8 +24,8 @@ class ListItems extends Component {
         // console.log(this.props.isAuth);
         // console.log(this.state.authTitles);
 
-        let targetMenu = this.state.unAuthtitles;
-        console.log(targetMenu);
+        let targetMenu = this.state.unAuthTitles;
+        //console.log(targetMenu);
 
         if (this.props.isAuth) {
             //console.log(targetMenu);

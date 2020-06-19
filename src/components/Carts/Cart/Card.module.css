@@ -1,27 +1,60 @@
 .Cart {
-    background-color: teal;
+    background-color: rgb(199, 108, 172);
     margin          : 20px 12px;
     width           : 80%;
     min-height      : 150px;
 
-    padding: 3px 12px;
-    border : 2px solid rgb(20, 163, 51);
+    padding      : 3px 20px;
+    border       : 2px solid rgb(122, 20, 163);
+    border-radius: 60px 6px;
+}
+
+.NotAvailable {
+    background-color: rgb(165, 165, 165);
+    color           : rgb(10, 10, 10);
+    border-color    : wheat !important;
+
+}
+
+.NotAvailable::after {
+    content         : "اتمام بلیط";
+    background-color: red;
+    padding         : 1px 8px;
+    color           : wheat;
+    display         : inline-block;
+    transform       : rotate(-25deg);
+    border-radius   : 7px;
+}
+
+.NotAvailable button {
+    cursor          : not-allowed !important;
+    background-color: transparent !important;
+    color           : thistle !important;
+    border-color    : thistle !important;
+
+}
+
+.NotAvailable .Badge {
+    background-color: rgb(189, 13, 13) !important;
 }
 
 .Cart button {
     width           : 60px;
     height          : 23px;
-    background-color: tomato;
-    display         : block;
-    cursor          : pointer;
+    background-color: rgb(179, 25, 76);
+    border-color    : rgb(112, 5, 5);
+
+    display: block;
+    cursor : pointer;
 }
 
 .Cart span {
     font-weight: bold;
+
 }
 
 .Badge {
-    background-color: brown;
+    background-color: rgb(175, 172, 3);
     padding         : 3px;
     border-radius   : 300px;
 }

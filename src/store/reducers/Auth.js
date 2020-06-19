@@ -9,13 +9,23 @@ const initialSate = {
 }
 const reducer = (state = initialSate, action) => {
     switch (action.type) {
-        case actypes.LOGIN:
+        case actypes.USER_SIGNUP_FAIL:
 
             return {
                 isAuth: false,
             };
 
-        case actypes.ENROLL:
+        case actypes.USER_SIGNUP_SUCCESS:
+            return {
+                isAuth: true,
+            }
+        case actypes.USER_SIGNIN_FAIL:
+
+            return {
+                isAuth: false,
+            };
+
+        case actypes.USER_SIGNIN_SUCCESS:
             return {
                 isAuth: true,
             }

@@ -20,7 +20,7 @@ function App() {
 
     <Layout >
       <div style={{ minHeight: "100vh" }}>
-        سایر کامپوننت ها
+
 
 
         <Switch>

@@ -4,18 +4,21 @@ import * as acTypes from '../actions/actionTypes';
 
 const initialState = {
     tickets: [
-        //{time  /// disc   /// remaining  ///   }
+
     ]
 }
 
 
 const reducer = (state = initialState, action) => {
+
     switch (action.type) {
-        case acTypes.GET_TICKETS:
+        case acTypes.SET_TICKETS:
+            // console.log(action.tickets);
+
 
             return {
 
-
+                tickets: action.tickets
             };
 
         default:

@@ -1,21 +1,91 @@
 import * as acTypes from './actionTypes';
-
-//import axios 
-
-
+import axios from 'axios';
 //project API Key :
 //AIzaSyBncies-MiITlCeZLFYTb0xepogEXW7B5M 
 //  https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=[API_KEY]
 
 
-export const submitting = userData => {
+
+//////////////////////////////////////////////////////////
+//////////////         SIGN IN    ////////////////////////
+//////////////////////////////////////////////////////////
 
 
-    alert("pressed")
+export const trySignUp = (email, password) => {
+    const authData = {
+        email: email,
+        password: password,
+        returnSecureToken: true
+    }
+    console.log(authData);
+
+    return dispatch => {
+        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBncies-MiITlCeZLFYTb0xepogEXW7B5M', authData)
+            .then(response => {
+                console.log(response);
+                dispatch(signUpSuccess())
+            })
+            .catch(err => {
+                console.log("ERRORR ytyt", err);
+
+                dispatch(signUpFail())
+            }
+            )
+
+    }
+}
+
+
+
+export const signUpSuccess = (email, password) => {
     return {
-        type: acTypes.ENROLL, // acTypes.USER_SUBMITTING,
-        userData: userData,
+        type: acTypes.USER_SIGNUP_SUCCESS,
+        email: email,
+        password: password
 
+    }
+}
+
+export const signUpFail = () => {
+    return {
+        type: acTypes.USER_SIGNUP_FAIL,
+    }
+
+
+}
+
+
+
+
+//////////////////////////////////////////////////////////
+//////////////         SIGN IN    ////////////////////////
+//////////////////////////////////////////////////////////
+
+
+
+
+
+export const trySignIn = (email, password) => {
+    const authData = {
+        email: email,
+        password: password,
+        returnSecureToken: true
+    }
+    return dispatch => {
+        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBncies-MiITlCeZLFYTb0xepogEXW7B5M', authData)
+
+
+            .then(response => {
+                console.log(response);
+
+                dispatch(signInSuccess())
+            })
+            .catch(err => {
+                console.log("ERRORR", err);
+
+                dispatch(signInFail)
+            }
+            )
 
     }
 }
@@ -24,20 +94,13 @@ export const submitting = userData => {
 
 
 
-/*
-EXAMPLE OF ASYNC DISPATCH
-
-export const initIngredients = () => {
-
-    return dispatch => {
-        axios.get("https://react-burger-7c156.firebaseio.com/ingredients.json")
-            .then(response => {
-
-                dispatch(setIngredients(response.data))
-            })
-            .catch(
-                dispatch(fetchIngredientsFailed())
-            )
-
+export const signInSuccess = () => {
+    return {
+        type: acTypes.USER_SIGNIN_SUCCESS,
     }
-} */
+}
+export const signInFail = () => {
+    return {
+        type: acTypes.USER_SIGNIN_FAIL,
+    }
+}

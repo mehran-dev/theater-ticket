@@ -8,6 +8,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import thunk from "redux-thunk";
 import authenticationReducer from './store/reducers/Auth';
+import getTicketsREducer from './store/reducers/available-tickets';
+
 
 //const store = createStore(reducer)
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -16,7 +18,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
   Auth: authenticationReducer,
-  //notes: notesReducer
+  tickets: getTicketsREducer
 });
 
 

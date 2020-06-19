@@ -4,7 +4,7 @@ const InputElement = (props) => {
     return (
         <div className={css.InputPair}>
             <label>{props.lbl}</label>
-            <input type={props.eltype} />
+            <input onChange={props.changed} type={props.eltype} />
         </div>
     );
 };
